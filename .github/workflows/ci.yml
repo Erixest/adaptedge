@@ -12,7 +12,7 @@ permissions:
   packages: write
 
 env:
-  IMAGE: ghcr.io/${{ github.repository }}
+  IMAGE: ghcr.io/erixest/adaptedge
 
 jobs:
   quality:
@@ -35,7 +35,9 @@ jobs:
       - name: Lint
         run: ruff check src tests
       - name: Unit tests and coverage
-        run: pytest -q --junitxml=reports/junit.xml --cov=adaptedge --cov-report=xml:reports/coverage.xml --cov-report=term-missing
+        run: |
+          mkdir -p reports
+          pytest -q --junitxml=reports/junit.xml --cov=adaptedge --cov-report=xml:reports/coverage.xml --cov-report=term-missing
       - name: Reproducible evaluation
         run: python -m adaptedge.evaluate --runs 200 --seed 42 --out reports/metrics.json
       - name: Upload reports
