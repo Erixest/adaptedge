@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite it as below."
+title: "AdaptEdge: reproducible adaptive WebRTC/QUIC transport selection"
+authors:
+  - family-names: Makhambetov
+    given-names: Alemzhan
+    affiliation: Astana IT University
+version: 0.1.0
+date-released: 2026-10-31
+license: MIT
+repository-code: https://github.com/Erixest/adaptedge
+keywords:
+  - QUIC
+  - WebRTC
+  - LoRa
+  - ESP32
+  - reproducibility
+  - DevOps

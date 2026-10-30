@@ -1,0 +1,3 @@
+7ec325816f294d04f40aecce01ad107d64f8f3f81dd3879720bff4ce5efa17b4  dissertation/firmware/heltec-lora-rtt/runs/2026-10-06-steady-sf7-bw125.csv
+5f214f3427c4ed6c34702a6c45d04d628d7da9c07afe79da3688244bd73de7be  dissertation/firmware/heltec-lora-rtt/runs/2026-10-06-steady-sf9-bw125.csv
+9698d5a91cee4c5d0b180695d6c421317e5de6f996218b7c43195bb77f228ee9  dissertation/firmware/heltec-lora-rtt/runs/2026-10-06-steady-sf7-minus9dbm.csv
