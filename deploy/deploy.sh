@@ -19,6 +19,13 @@ else
     echo "Kubernetes API not reachable: deploying to the local test target"
     nerdctl rm -f adaptedge-test >/dev/null 2>&1 || true
     nerdctl run -d --name adaptedge-test -p 127.0.0.1:18081:8000 "${IMAGE}"
-    python3 "${ROOT}/scripts/healthcheck.py" 18081
-    echo "CD target: http://127.0.0.1:18081/health"
+    for _ in $(seq 1 30); do
+        if python3 "${ROOT}/scripts/healthcheck.py" 18081; then
+            echo "CD target: http://127.0.0.1:18081/health"
+            exit 0
+        fi
+        sleep 2
+    done
+    nerdctl logs adaptedge-test >&2 || true
+    exit 1
 fi
